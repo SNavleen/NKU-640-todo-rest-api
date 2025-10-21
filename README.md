@@ -2,7 +2,11 @@
 
 This project is a TODO list REST API intended as a personal task manager. The API supports creating, retrieving, updating, and deleting tasks and lists.
 
-### Core features
+## GitHub Pages
+
+- [NKU-640-todo-rest-api](https://snavleen.github.io/NKU-640-todo-rest-api/)
+
+## Core features
 
 - Create, read, update and delete (CRUD) tasks
 - Mark tasks as complete/incomplete
@@ -11,7 +15,7 @@ This project is a TODO list REST API intended as a personal task manager. The AP
 - Assign categories or tags to tasks
 - Support multiple TODO lists (e.g. "groceries", "work")
 
-### Possible future features
+## Possible future features
 
 - User authentication and per-user lists
 - Recurring tasks and reminders
@@ -19,7 +23,7 @@ This project is a TODO list REST API intended as a personal task manager. The AP
 - Import/export of tasks (CSV/JSON)
 - Web UI and integrations (voice assistant, calendar)
 
-### Data model (example)
+## Data model (example)
 
 ##### List
 
@@ -40,7 +44,7 @@ This project is a TODO list REST API intended as a personal task manager. The AP
 - `createdAt` — `string` (ISO 8601)
 - `updatedAt` — `string` (ISO 8601, optional)
 
-### Example REST endpoints
+## Example REST endpoints
 
 ##### Lists
 
