@@ -4,7 +4,7 @@ This project is a TODO list REST API intended as a personal task manager. The AP
 
 ## GitHub Pages
 
-- [NKU-640-todo-rest-api](https://snavleen.github.io/NKU-640-todo-rest-api/)
+- [NKU-640-todo-rest-api](http://todo.snavleen.com/)
 
 ## Core features
 
