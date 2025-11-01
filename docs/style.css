@@ -1,0 +1,10 @@
+/* Custom accent color for Material theme */
+:root {
+  --md-primary-fg-color: #4b286d;
+  --md-accent-fg-color: #6d3bbd;
+}
+
+/* Example: style for custom footer in index.md (if used) */
+footer[style] {
+  color: #4b286d !important;
+}

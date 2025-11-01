@@ -1,0 +1,15 @@
+site_name: NKU 640
+nav:
+  - Home: index.md
+  - TODO-API:
+      - Overview: homework4/README.md
+      - Plan: homework4/HW4_plan_stage1.md
+  - Quality Software:
+      - Overview: homework5/README.md
+      - Marp Example: homework5/example-marp.md
+theme:
+  name: material
+extra_css:
+  - style.css
+extra:
+  favicon: favicon.svg
