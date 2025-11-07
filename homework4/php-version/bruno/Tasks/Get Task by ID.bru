@@ -1,0 +1,15 @@
+meta {
+  name: Get Task by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{apiUrl}}/tasks/:taskId
+  body: none
+  auth: none
+}
+
+params:path {
+  taskId: REPLACE_WITH_ACTUAL_TASK_ID
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Create Task
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{apiUrl}}/lists/:listId/tasks
+  body: json
+  auth: none
+}
+
+params:path {
+  listId: REPLACE_WITH_ACTUAL_LIST_ID
+}
+
+body:json {
+  {
+    "title": "Buy milk",
+    "description": "2 liters, skim",
+    "dueDate": "2025-11-07T18:00:00Z",
+    "priority": "medium",
+    "categories": ["groceries", "dairy"]
+  }
+}

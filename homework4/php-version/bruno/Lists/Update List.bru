@@ -1,0 +1,21 @@
+meta {
+  name: Update List
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{apiUrl}}/lists/:listId
+  body: json
+  auth: none
+}
+
+params:path {
+  listId: REPLACE_WITH_ACTUAL_LIST_ID
+}
+
+body:json {
+  {
+    "description": "Updated weekly shopping list"
+  }
+}

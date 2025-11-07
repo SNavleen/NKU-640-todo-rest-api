@@ -1,0 +1,15 @@
+meta {
+  name: Get Tasks by List
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{apiUrl}}/lists/:listId/tasks
+  body: none
+  auth: none
+}
+
+params:path {
+  listId: REPLACE_WITH_ACTUAL_LIST_ID
+}
