@@ -55,6 +55,16 @@ class Database
             // Enable foreign keys in SQLite
             $this->connection->exec('PRAGMA foreign_keys = ON');
 
+            // Ensure the database file is writable (useful for tests that create the file)
+            if (file_exists($this->dbPath)) {
+                @chmod($this->dbPath, 0666);
+            }
+
+            // Ensure directory is writable as well
+            if (is_dir($dbDir)) {
+                @chmod($dbDir, 0755);
+            }
+
             $this->logger->info('Database connection established', ['path' => $this->dbPath]);
 
         } catch (PDOException $e) {
@@ -156,5 +166,17 @@ class Database
     public function lastInsertId(): string
     {
         return $this->connection->lastInsertId();
+    }
+
+    /**
+     * Reset the database instance (useful for tests)
+     * WARNING: This should only be used in tests
+     */
+    public static function reset(): void
+    {
+        if (self::$instance !== null && self::$instance->connection !== null) {
+            self::$instance->connection = null;
+        }
+        self::$instance = null;
     }
 }

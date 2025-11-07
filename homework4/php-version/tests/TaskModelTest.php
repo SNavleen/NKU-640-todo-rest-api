@@ -5,6 +5,7 @@ namespace TodoApi\Tests;
 use PHPUnit\Framework\TestCase;
 use TodoApi\Models\Task;
 use TodoApi\Models\TodoList;
+use TodoApi\Services\Database;
 
 class TaskModelTest extends TestCase
 {
@@ -25,6 +26,9 @@ class TaskModelTest extends TestCase
 
         // Override the database path for testing
         putenv('DATABASE_PATH=' . $this->testDbPath);
+
+        // Reset the Database singleton to pick up the new DATABASE_PATH
+        Database::reset();
 
         $this->taskModel = new Task();
         $this->listModel = new TodoList();

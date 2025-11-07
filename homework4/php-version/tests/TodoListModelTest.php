@@ -24,6 +24,9 @@ class TodoListModelTest extends TestCase
         // Override the database path for testing
         putenv('DATABASE_PATH=' . $this->testDbPath);
 
+        // Reset the Database singleton to pick up the new DATABASE_PATH
+        Database::reset();
+
         $this->listModel = new TodoList();
     }
 

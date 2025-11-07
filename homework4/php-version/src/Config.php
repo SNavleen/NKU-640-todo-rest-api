@@ -83,6 +83,16 @@ class Config
 
     public function getDatabasePath(): string
     {
+        // Allow overriding database path via environment variable for tests and CI
+        $envPath = getenv('DATABASE_PATH');
+        if ($envPath !== false && $envPath !== '') {
+            // If a relative path is provided, convert to project relative path
+            if (!str_starts_with($envPath, '/')) {
+                $envPath = __DIR__ . '/../' . $envPath;
+            }
+            return $envPath;
+        }
+
         return $this->get('DATABASE_PATH', __DIR__ . '/../data/todo.db');
     }
 
