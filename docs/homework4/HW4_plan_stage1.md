@@ -15,7 +15,7 @@ marp: true
 ## Your HW4 Part 2 Submission Date
 
 1. **When (Plan):** Create application in PHP: finish by 2025-11-07
-2. **When (Actual):** TBD
+2. **When (Actual):** 2025-11-07
 3. **Comment:** This document will be used to create a plan for the REST API
 
 ---
@@ -26,7 +26,7 @@ marp: true
 
 1. **What:**  Define API contract for REST API endpoint(s) and safety rules.
 2. **When (Plan):**  2025-11-03
-3. **When (Actual):** TBD  
+3. **When (Actual):** 2025-11-04
 4. **Comment:** Include endpoint path(s), HTTP method(s), request/response schema, auth/flags, and environment restrictions.
 
 ---
@@ -35,7 +35,7 @@ marp: true
 
 1. **What:** Implement REST API endpoint and server-side handlers.
 2. **When (Plan):**  2025-11-05
-3. **When (Actual):** TBD  
+3. **When (Actual):** 2025-11-05  
 4. **Comment:** Keep function small where possible and add logging. Deliver a runnable PHP app (local dev).
 
 ---
@@ -44,7 +44,7 @@ marp: true
 
 1. **What:** Add unit tests for REST API
 2. **When (Plan):**  2025-11-06
-3. **When (Actual):** TBD  
+3. **When (Actual):** 2025-11-06  
 4. **Comment:** Cover happy path, safety checks, and edge cases.
 
 ---
@@ -53,5 +53,5 @@ marp: true
 
 1. **What:** Update `README.md` with REST API spec, usage, and safety notes.
 2. **When (Plan):**  2025-11-07
-3. **When (Actual):** TBD  
+3. **When (Actual):** 2025-11-07  
 4. **Comment:** Include example curl commands and environment flag instructions.
