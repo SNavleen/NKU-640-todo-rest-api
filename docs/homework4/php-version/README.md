@@ -274,6 +274,8 @@ See [API.md](API.md) for complete endpoint documentation.
 
 | Method | Endpoint | Protected | Description |
 |--------|----------|-----------|-------------|
+| **Health** ||||
+| GET | `/api/v1/health` | No | System health check |
 | **Authentication** ||||
 | POST | `/api/v1/auth/signup` | No | Create account |
 | POST | `/api/v1/auth/login` | No | Login |
@@ -443,6 +445,104 @@ server {
 chmod 755 logs data
 chmod 644 .env
 ```
+
+### AWS EC2 Deployment
+
+The project includes automated AWS EC2 deployment scripts in the `deployment/` directory.
+
+#### Prerequisites
+
+- AWS CLI configured with credentials (`aws configure`)
+- SSH access to create EC2 instances
+
+#### Launch EC2 Instance
+
+```bash
+cd deployment
+./launch-ec2.sh
+```
+
+This script will:
+- Create a Free Tier eligible t3.micro instance
+- Set up security group (ports 22, 80, 443)
+- Generate SSH key pair (`php-todo-api-key.pem`)
+- Return the public IP address
+
+#### Deploy Application
+
+After the instance is running, SSH into it:
+
+```bash
+ssh -i php-todo-api-key.pem ubuntu@<PUBLIC_IP>
+```
+
+Upload and run the deployment script:
+
+```bash
+# From your local machine
+scp -i deployment/php-todo-api-key.pem deployment/deploy-ec2-setup.sh ubuntu@<PUBLIC_IP>:~/
+scp -i deployment/php-todo-api-key.pem deployment/nginx-production.conf ubuntu@<PUBLIC_IP>:~/
+
+# On the EC2 instance
+chmod +x deploy-ec2-setup.sh
+./deploy-ec2-setup.sh
+```
+
+The setup script installs:
+- Nginx web server
+- PHP 8.1 with required extensions
+- Composer
+- Git
+
+Then manually deploy your code:
+
+```bash
+# Clone or upload your code to /var/www/php-todo-api
+cd /var/www/php-todo-api
+composer install --no-dev --optimize-autoloader
+
+# Configure nginx
+sudo cp ~/nginx-production.conf /etc/nginx/sites-available/php-todo-api
+sudo ln -sf /etc/nginx/sites-available/php-todo-api /etc/nginx/sites-enabled/
+sudo rm -f /etc/nginx/sites-enabled/default
+
+# Set permissions
+sudo chown -R www-data:www-data /var/www/php-todo-api
+sudo chmod -R 755 /var/www/php-todo-api
+sudo chmod -R 775 /var/www/php-todo-api/data /var/www/php-todo-api/logs
+
+# Test and restart nginx
+sudo nginx -t
+sudo systemctl restart nginx
+sudo systemctl restart php8.1-fpm
+```
+
+#### Test Deployment
+
+```bash
+# Check health endpoint
+curl http://<PUBLIC_IP>/api/v1/health
+
+# Test API
+curl http://<PUBLIC_IP>/api/v1/lists
+```
+
+#### Cleanup AWS Resources
+
+To remove all AWS resources and avoid charges:
+
+```bash
+cd deployment
+./cleanup-aws.sh
+```
+
+This will terminate the EC2 instance, delete the security group, and remove the key pair.
+
+**Important Notes:**
+- Keep your `.pem` file secure (it's gitignored)
+- Free Tier instances are free for 750 hours/month for 12 months
+- Monitor your AWS billing dashboard
+- The cleanup script will ask for confirmation before deletion
 
 ---
 

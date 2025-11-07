@@ -6,6 +6,7 @@ use TodoApi\Router;
 use TodoApi\Controllers\ListController;
 use TodoApi\Controllers\TaskController;
 use TodoApi\Controllers\AuthController;
+use TodoApi\Controllers\HealthController;
 
 // Enable error reporting in development
 $config = \TodoApi\Config::getInstance();
@@ -53,6 +54,10 @@ $router->post("/api/$apiVersion/auth/signup", [$authController, 'signup']);
 $router->post("/api/$apiVersion/auth/login", [$authController, 'login']);
 $router->post("/api/$apiVersion/auth/logout", [$authController, 'logout']);
 $router->get("/api/$apiVersion/users/profile", [$authController, 'getProfile']);
+
+// Health check route
+$healthController = new HealthController();
+$router->get("/api/$apiVersion/health", [$healthController, 'getHealth']);
 
 // Dispatch the request
 $router->dispatch();

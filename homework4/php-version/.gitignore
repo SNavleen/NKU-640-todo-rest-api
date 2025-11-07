@@ -26,3 +26,12 @@ composer.lock
 
 # PHPUnit
 .phpunit.result.cache
+
+# AWS Keys and Credentials
+*.pem
+*.key
+deployment/*.pem
+deployment/*.key
+
+# Bruno
+bruno/environments/prod*.bru

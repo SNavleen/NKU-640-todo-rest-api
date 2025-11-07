@@ -4,7 +4,7 @@
 
 This document defines the complete API contract for the TODO REST API, including all endpoint specifications, authentication, request/response schemas, validation rules, and security guidelines.
 
-**Base URL:** `http://localhost:8000/api/v1`
+**Base URL:** `http://localhost:8000/api/v1` (or your deployed server URL)
 
 **Content-Type:** `application/json`
 
@@ -13,6 +13,7 @@ This document defines the complete API contract for the TODO REST API, including
 ## Table of Contents
 
 - [Data Models](#data-models)
+- [Health Check](#health-check)
 - [Authentication](#authentication)
 - [List Endpoints](#list-endpoints)
 - [Task Endpoints](#task-endpoints)
@@ -65,6 +66,55 @@ This document defines the complete API contract for the TODO REST API, including
   "updatedAt": "string (ISO 8601 datetime, optional)"
 }
 ```
+
+---
+
+## Health Check
+
+### GET /api/v1/health
+
+Check the health and status of the API and its dependencies.
+
+**Authentication:** Not required
+
+**Success Response (200):**
+```json
+{
+  "status": "healthy",
+  "timestamp": "2025-11-07T23:48:15+00:00",
+  "service": "PHP TODO REST API",
+  "version": "v1",
+  "checks": {
+    "database": {
+      "status": "healthy",
+      "message": "Database connection successful"
+    },
+    "php": {
+      "status": "healthy",
+      "version": "8.1.33"
+    },
+    "disk": {
+      "status": "healthy",
+      "free_space_mb": 5629.3,
+      "used_percent": 27.41
+    },
+    "memory": {
+      "status": "healthy",
+      "memory_limit": "128M",
+      "memory_usage_mb": 2
+    }
+  }
+}
+```
+
+**Status Values:**
+- `healthy`: All systems operational
+- `warning`: System is operational but has warnings (e.g., low disk space)
+- `unhealthy`: Critical issue detected (returns 503 status code)
+
+**HTTP Status Codes:**
+- `200`: System is healthy or has warnings
+- `503`: System is unhealthy (service unavailable)
 
 ---
 

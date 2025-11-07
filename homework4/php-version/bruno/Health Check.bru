@@ -1,0 +1,30 @@
+meta {
+  name: Health Check
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/health
+  body: none
+  auth: none
+}
+
+docs {
+  ## Health Check
+
+  Check the health and status of the API and its dependencies.
+
+  **Authentication:** Not required
+
+  **Response:**
+  - `status`: Overall system status (healthy, warning, unhealthy)
+  - `timestamp`: Current server time
+  - `service`: API service name
+  - `version`: API version
+  - `checks`: Individual component health checks
+    - `database`: Database connection status
+    - `php`: PHP version and status
+    - `disk`: Disk space availability
+    - `memory`: Memory usage
+}
