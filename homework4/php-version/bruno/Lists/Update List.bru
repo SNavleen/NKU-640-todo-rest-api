@@ -5,13 +5,9 @@ meta {
 }
 
 patch {
-  url: {{apiUrl}}/lists/:listId
+  url: {{apiUrl}}/lists/{{listId}}
   body: json
   auth: none
-}
-
-params:path {
-  listId: REPLACE_WITH_ACTUAL_LIST_ID
 }
 
 body:json {

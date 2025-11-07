@@ -5,11 +5,7 @@ meta {
 }
 
 get {
-  url: {{apiUrl}}/lists/:listId
+  url: {{apiUrl}}/lists/{{listId}}
   body: none
   auth: none
-}
-
-params:path {
-  listId: REPLACE_WITH_ACTUAL_LIST_ID
 }

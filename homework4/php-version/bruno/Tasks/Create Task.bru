@@ -11,7 +11,7 @@ post {
 }
 
 params:path {
-  listId: REPLACE_WITH_ACTUAL_LIST_ID
+  listId: {{listId}}
 }
 
 body:json {
@@ -22,4 +22,9 @@ body:json {
     "priority": "medium",
     "categories": ["groceries", "dairy"]
   }
+}
+
+script:post-response {
+  let data = res.body;
+  bru.setEnvVar("taskId", data.id);
 }

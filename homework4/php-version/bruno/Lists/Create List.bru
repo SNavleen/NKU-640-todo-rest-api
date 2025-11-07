@@ -16,3 +16,8 @@ body:json {
     "description": "Weekly shopping list"
   }
 }
+
+script:post-response {
+  let data = res.body;
+  bru.setEnvVar("listId", data.id);
+}
