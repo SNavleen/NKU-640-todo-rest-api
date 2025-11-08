@@ -17,6 +17,7 @@ A secure REST API for managing TODO lists and tasks with JWT authentication.
 
 - [README](homework4/php-version/README.md) - Quick start, setup, and testing guide
 - [API Reference](homework4/php-version/API.md) - Complete API specification with all endpoints
+- [Tutorial Slides](homework4/php-version/tutorial.md) - Comprehensive tutorial presentation (Marp slides)
 <!-- - [Implementation Summary](homework4/php-version/IMPLEMENTATION_SUMMARY.md) - Technical implementation details -->
 
 **Features:**

@@ -3,3 +3,8 @@ site/**
 
 mkdocs.md
 docs/homework4/php-version/IMPLEMENTATION_SUMMARY.md
+
+# Deployment tutorial - only for submission, not in public docs
+docs/homework4/php-version/deployment-tutorial.md
+docs/homework4/php-version/deployment-tutorial.pdf
+docs/homework4/php-version/screenshots/

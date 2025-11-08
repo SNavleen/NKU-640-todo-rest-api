@@ -7,6 +7,7 @@ nav:
       - PHP Implementation:
           - README: homework4/php-version/README.md
           - API Reference: homework4/php-version/API.md
+          - Tutorial Slides: homework4/php-version/tutorial.md
           # - Implementation Summary: homework4/php-version/IMPLEMENTATION_SUMMARY.md
   - Quality Software:
       - Overview: homework5/README.md
