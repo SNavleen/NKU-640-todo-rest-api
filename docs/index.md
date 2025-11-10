@@ -34,12 +34,15 @@ A secure REST API for managing TODO lists and tasks with JWT authentication.
 
 ### Homework 5: Quality Software
 
-Software quality practices and presentations.
+Software quality practices and presentations covering Weeks 1-4.
 
 **Documentation:**
 
 - [Overview](homework5/README.md) - Quality software homework overview
-- [Marp Example](homework5/example-marp.md) - Example Marp presentation
+
+**Presentations:**
+
+- [Final Presentation](homework5/presentation.md) - Finial Presentation for CSC 640
 
 ---
 

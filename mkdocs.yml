@@ -11,7 +11,7 @@ nav:
           # - Implementation Summary: homework4/php-version/IMPLEMENTATION_SUMMARY.md
   - Quality Software:
       - Overview: homework5/README.md
-      - Marp Example: homework5/example-marp.md
+      - Final Presentation: homework5/presentation.md
 theme:
   name: material
 extra_css:
