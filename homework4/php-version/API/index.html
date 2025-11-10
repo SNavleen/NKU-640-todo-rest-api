@@ -1,0 +1,2466 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../tutorial/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>API Reference - NKU 640</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#todo-rest-api-complete-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NKU 640" class="md-header__button md-logo" aria-label="NKU 640" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NKU 640
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NKU 640" class="md-nav__button md-logo" aria-label="NKU 640" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NKU 640
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TODO-API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TODO-API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HW4_plan_stage1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PHP Implementation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            PHP Implementation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1health" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/health
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1authsignup" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/auth/signup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1authlogin" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/auth/login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1usersprofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/users/profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1authlogout" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/auth/logout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1listsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/lists/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1listsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/lists/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1listsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/lists/:id
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1listslistidtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/lists/:listId/tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1tasksid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/tasks/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1listslistidtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/lists/:listId/tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1tasksid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/tasks/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1tasksid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/tasks/:id
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Responses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP Status Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Codes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Guidelines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-type-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content-Type Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-authentication-flow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Authentication Flow Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-blacklisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Blacklisting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Token Blacklisting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-jwt_secret-is-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why JWT_SECRET is Needed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-blacklisting-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Blacklisting Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-token-blacklisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Token Blacklisting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Queries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Impact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quality Software
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Quality Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework5/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Final Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1health" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/health
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1authsignup" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/auth/signup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1authlogin" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/auth/login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1usersprofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/users/profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1authlogout" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/auth/logout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1listsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/lists/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1listsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/lists/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1listsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/lists/:id
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1listslistidtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/lists/:listId/tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1tasksid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/tasks/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1listslistidtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/lists/:listId/tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1tasksid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/tasks/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1tasksid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/tasks/:id
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Responses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP Status Codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Codes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Guidelines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-type-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content-Type Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-authentication-flow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Authentication Flow Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-blacklisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Blacklisting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Token Blacklisting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-jwt_secret-is-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why JWT_SECRET is Needed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-blacklisting-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Blacklisting Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-token-blacklisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Token Blacklisting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Queries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Impact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="todo-rest-api-complete-api-reference">TODO REST API - Complete API Reference</h1>
+<h2 id="overview">Overview</h2>
+<p>This document defines the complete API contract for the TODO REST API, including all endpoint specifications, authentication, request/response schemas, validation rules, and security guidelines.</p>
+<p><strong>Base URL:</strong> <code>http://localhost:8000/api/v1</code> (or your deployed server URL)</p>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#data-models">Data Models</a></li>
+<li><a href="#health-check">Health Check</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#list-endpoints">List Endpoints</a></li>
+<li><a href="#task-endpoints">Task Endpoints</a></li>
+<li><a href="#error-responses">Error Responses</a></li>
+<li><a href="#security-guidelines">Security Guidelines</a></li>
+</ul>
+<hr />
+<h2 id="data-models">Data Models</h2>
+<h3 id="user">User</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;string (UUID v4)&quot;,
+  &quot;username&quot;: &quot;string (3-50 chars, unique)&quot;,
+  &quot;email&quot;: &quot;string (valid email, unique)&quot;,
+  &quot;createdAt&quot;: &quot;string (ISO 8601 datetime)&quot;,
+  &quot;updatedAt&quot;: &quot;string (ISO 8601 datetime, optional)&quot;
+}
+</code></pre>
+<p><strong>Note:</strong> Passwords are never returned in responses.</p>
+<h3 id="list">List</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;string (UUID v4)&quot;,
+  &quot;name&quot;: &quot;string (required, max 255 chars)&quot;,
+  &quot;description&quot;: &quot;string (optional, max 1000 chars)&quot;,
+  &quot;createdAt&quot;: &quot;string (ISO 8601 datetime)&quot;,
+  &quot;updatedAt&quot;: &quot;string (ISO 8601 datetime, optional)&quot;
+}
+</code></pre>
+<h3 id="task">Task</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;string (UUID v4)&quot;,
+  &quot;listId&quot;: &quot;string (UUID v4, required)&quot;,
+  &quot;title&quot;: &quot;string (required, max 255 chars)&quot;,
+  &quot;description&quot;: &quot;string (optional, max 2000 chars)&quot;,
+  &quot;completed&quot;: &quot;boolean (default: false)&quot;,
+  &quot;dueDate&quot;: &quot;string (ISO 8601 datetime, optional)&quot;,
+  &quot;priority&quot;: &quot;string (enum: 'low', 'medium', 'high', optional)&quot;,
+  &quot;categories&quot;: &quot;array of strings (optional, max 10 items, each max 50 chars)&quot;,
+  &quot;createdAt&quot;: &quot;string (ISO 8601 datetime)&quot;,
+  &quot;updatedAt&quot;: &quot;string (ISO 8601 datetime, optional)&quot;
+}
+</code></pre>
+<hr />
+<h2 id="health-check">Health Check</h2>
+<h3 id="get-apiv1health">GET /api/v1/health</h3>
+<p>Check the health and status of the API and its dependencies.</p>
+<p><strong>Authentication:</strong> Not required</p>
+<p><strong>Success Response (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;healthy&quot;,
+  &quot;timestamp&quot;: &quot;2025-11-07T23:48:15+00:00&quot;,
+  &quot;service&quot;: &quot;PHP TODO REST API&quot;,
+  &quot;version&quot;: &quot;v1&quot;,
+  &quot;checks&quot;: {
+    &quot;database&quot;: {
+      &quot;status&quot;: &quot;healthy&quot;,
+      &quot;message&quot;: &quot;Database connection successful&quot;
+    },
+    &quot;php&quot;: {
+      &quot;status&quot;: &quot;healthy&quot;,
+      &quot;version&quot;: &quot;8.1.33&quot;
+    },
+    &quot;disk&quot;: {
+      &quot;status&quot;: &quot;healthy&quot;,
+      &quot;free_space_mb&quot;: 5629.3,
+      &quot;used_percent&quot;: 27.41
+    },
+    &quot;memory&quot;: {
+      &quot;status&quot;: &quot;healthy&quot;,
+      &quot;memory_limit&quot;: &quot;128M&quot;,
+      &quot;memory_usage_mb&quot;: 2
+    }
+  }
+}
+</code></pre>
+<p><strong>Status Values:</strong>
+- <code>healthy</code>: All systems operational
+- <code>warning</code>: System is operational but has warnings (e.g., low disk space)
+- <code>unhealthy</code>: Critical issue detected (returns 503 status code)</p>
+<p><strong>HTTP Status Codes:</strong>
+- <code>200</code>: System is healthy or has warnings
+- <code>503</code>: System is unhealthy (service unavailable)</p>
+<hr />
+<h2 id="authentication">Authentication</h2>
+<p>The API uses <strong>JWT (JSON Web Token)</strong> for authentication:
+- Passwords are hashed with <strong>bcrypt</strong> (cost factor 12)
+- Tokens expire after <strong>1 hour</strong> (configurable via <code>JWT_EXPIRY</code>)
+- Tokens are sent as <code>Authorization: Bearer &lt;token&gt;</code> header
+- Tokens are blacklisted on logout to prevent reuse</p>
+<h3 id="post-apiv1authsignup">POST /api/v1/auth/signup</h3>
+<p>Create a new user account.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;username&quot;: &quot;alice&quot;,
+  &quot;email&quot;: &quot;alice@example.com&quot;,
+  &quot;password&quot;: &quot;password123&quot;
+}
+</code></pre>
+<p><strong>Validation Rules:</strong>
+- <code>username</code>: 3-50 characters, unique
+- <code>email</code>: Valid email format, unique
+- <code>password</code>: Minimum 8 characters</p>
+<p><strong>Success Response (201):</strong></p>
+<pre><code class="language-json">{
+  &quot;token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGc...&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: &quot;a1b2c3d4-...&quot;,
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;email&quot;: &quot;alice@example.com&quot;,
+    &quot;createdAt&quot;: &quot;2025-11-06T10:00:00Z&quot;
+  }
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Validation error
+- <code>409 Conflict</code> - Username or email already exists
+- <code>500 Internal Server Error</code> - Server error</p>
+<p><strong>curl Example:</strong></p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/auth/signup \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;email&quot;: &quot;alice@example.com&quot;,
+    &quot;password&quot;: &quot;password123&quot;
+  }'
+</code></pre>
+<hr />
+<h3 id="post-apiv1authlogin">POST /api/v1/auth/login</h3>
+<p>Authenticate and receive a JWT token.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;username&quot;: &quot;alice&quot;,
+  &quot;password&quot;: &quot;password123&quot;
+}
+</code></pre>
+<p><strong>Success Response (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGc...&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: &quot;a1b2c3d4-...&quot;,
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;email&quot;: &quot;alice@example.com&quot;,
+    &quot;createdAt&quot;: &quot;2025-11-06T10:00:00Z&quot;
+  }
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Validation error
+- <code>401 Unauthorized</code> - Invalid username or password
+- <code>500 Internal Server Error</code> - Server error</p>
+<p><strong>curl Example:</strong></p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/auth/login \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;password&quot;: &quot;password123&quot;
+  }'
+</code></pre>
+<hr />
+<h3 id="get-apiv1usersprofile">GET /api/v1/users/profile</h3>
+<p>Get current user profile (requires authentication).</p>
+<p><strong>Headers Required:</strong></p>
+<pre><code>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
+</code></pre>
+<p><strong>Success Response (200):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;a1b2c3d4-...&quot;,
+  &quot;username&quot;: &quot;alice&quot;,
+  &quot;email&quot;: &quot;alice@example.com&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-06T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>401 Unauthorized</code> - Missing, invalid, expired, or blacklisted token
+- <code>404 Not Found</code> - User not found
+- <code>500 Internal Server Error</code> - Server error</p>
+<p><strong>curl Example:</strong></p>
+<pre><code class="language-bash">TOKEN=&quot;your-jwt-token-here&quot;
+curl -X GET http://localhost:8000/api/v1/users/profile \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+</code></pre>
+<hr />
+<h3 id="post-apiv1authlogout">POST /api/v1/auth/logout</h3>
+<p>Logout and blacklist the current token (requires authentication).</p>
+<p><strong>Headers Required:</strong></p>
+<pre><code>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
+</code></pre>
+<p><strong>Success Response (204):</strong>
+- No content
+- Token is added to blacklist and can no longer be used</p>
+<p><strong>curl Example:</strong></p>
+<pre><code class="language-bash">TOKEN=&quot;your-jwt-token-here&quot;
+curl -X POST http://localhost:8000/api/v1/auth/logout \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+</code></pre>
+<hr />
+<h2 id="list-endpoints">List Endpoints</h2>
+<h3 id="get-apiv1lists">GET /api/v1/lists</h3>
+<p>Retrieve all lists.</p>
+<p><strong>Request:</strong>
+- Method: <code>GET</code>
+- Headers: None required
+- Body: None</p>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;name&quot;: &quot;Groceries&quot;,
+    &quot;description&quot;: &quot;Weekly shopping list&quot;,
+    &quot;createdAt&quot;: &quot;2025-11-06T10:00:00Z&quot;,
+    &quot;updatedAt&quot;: null
+  }
+]
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="get-apiv1listsid">GET /api/v1/lists/:id</h3>
+<p>Retrieve a single list by ID.</p>
+<p><strong>Request:</strong>
+- Method: <code>GET</code>
+- Headers: None required
+- URL Parameters: <code>id</code> (UUID v4)</p>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;name&quot;: &quot;Groceries&quot;,
+  &quot;description&quot;: &quot;Weekly shopping list&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-06T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format
+- <code>404 Not Found</code> - List not found
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="post-apiv1lists">POST /api/v1/lists</h3>
+<p>Create a new list.</p>
+<p><strong>Request:</strong>
+- Method: <code>POST</code>
+- Headers: <code>Content-Type: application/json</code>
+- Body:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Groceries&quot;,
+  &quot;description&quot;: &quot;Weekly shopping list&quot;
+}
+</code></pre>
+<p><strong>Validation Rules:</strong>
+- <code>name</code>: Required, string, 1-255 characters, cannot be only whitespace
+- <code>description</code>: Optional, string, max 1000 characters</p>
+<p><strong>Response (201 Created):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;name&quot;: &quot;Groceries&quot;,
+  &quot;description&quot;: &quot;Weekly shopping list&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-06T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Validation error (invalid/missing fields)
+- <code>415 Unsupported Media Type</code> - Invalid Content-Type
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="patch-apiv1listsid">PATCH /api/v1/lists/:id</h3>
+<p>Update an existing list.</p>
+<p><strong>Request:</strong>
+- Method: <code>PATCH</code>
+- Headers: <code>Content-Type: application/json</code>
+- URL Parameters: <code>id</code> (UUID v4)
+- Body (all fields optional):</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Updated Groceries&quot;,
+  &quot;description&quot;: &quot;Updated description&quot;
+}
+</code></pre>
+<p><strong>Validation Rules:</strong>
+- <code>name</code>: Optional, string, 1-255 characters if provided
+- <code>description</code>: Optional, string, max 1000 characters if provided
+- At least one field must be provided</p>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;name&quot;: &quot;Updated Groceries&quot;,
+  &quot;description&quot;: &quot;Updated description&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-06T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: &quot;2025-11-06T11:00:00Z&quot;
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format or validation error
+- <code>404 Not Found</code> - List not found
+- <code>415 Unsupported Media Type</code> - Invalid Content-Type
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="delete-apiv1listsid">DELETE /api/v1/lists/:id</h3>
+<p>Delete a list and all associated tasks.</p>
+<p><strong>Request:</strong>
+- Method: <code>DELETE</code>
+- Headers: None required
+- URL Parameters: <code>id</code> (UUID v4)</p>
+<p><strong>Response (204 No Content):</strong>
+- Empty body</p>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format
+- <code>404 Not Found</code> - List not found
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h2 id="task-endpoints">Task Endpoints</h2>
+<h3 id="get-apiv1listslistidtasks">GET /api/v1/lists/:listId/tasks</h3>
+<p>Retrieve all tasks in a specific list.</p>
+<p><strong>Request:</strong>
+- Method: <code>GET</code>
+- Headers: None required
+- URL Parameters: <code>listId</code> (UUID v4)</p>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+    &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;title&quot;: &quot;Buy milk&quot;,
+    &quot;description&quot;: &quot;2 liters, skim&quot;,
+    &quot;completed&quot;: false,
+    &quot;dueDate&quot;: &quot;2025-11-07T18:00:00Z&quot;,
+    &quot;priority&quot;: &quot;medium&quot;,
+    &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+    &quot;createdAt&quot;: &quot;2025-11-06T10:05:00Z&quot;,
+    &quot;updatedAt&quot;: null
+  }
+]
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format
+- <code>404 Not Found</code> - List not found
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="get-apiv1tasksid">GET /api/v1/tasks/:id</h3>
+<p>Retrieve a single task by ID.</p>
+<p><strong>Request:</strong>
+- Method: <code>GET</code>
+- Headers: None required
+- URL Parameters: <code>id</code> (UUID v4)</p>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+  &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;title&quot;: &quot;Buy milk&quot;,
+  &quot;description&quot;: &quot;2 liters, skim&quot;,
+  &quot;completed&quot;: false,
+  &quot;dueDate&quot;: &quot;2025-11-07T18:00:00Z&quot;,
+  &quot;priority&quot;: &quot;medium&quot;,
+  &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+  &quot;createdAt&quot;: &quot;2025-11-06T10:05:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format
+- <code>404 Not Found</code> - Task not found
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="post-apiv1listslistidtasks">POST /api/v1/lists/:listId/tasks</h3>
+<p>Create a new task in a specific list.</p>
+<p><strong>Request:</strong>
+- Method: <code>POST</code>
+- Headers: <code>Content-Type: application/json</code>
+- URL Parameters: <code>listId</code> (UUID v4)
+- Body:</p>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Buy milk&quot;,
+  &quot;description&quot;: &quot;2 liters, skim&quot;,
+  &quot;dueDate&quot;: &quot;2025-11-07T18:00:00Z&quot;,
+  &quot;priority&quot;: &quot;medium&quot;,
+  &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;]
+}
+</code></pre>
+<p><strong>Validation Rules:</strong>
+- <code>title</code>: Required, string, 1-255 characters, cannot be only whitespace
+- <code>description</code>: Optional, string, max 2000 characters
+- <code>completed</code>: Optional, boolean (default: false)
+- <code>dueDate</code>: Optional, valid ISO 8601 datetime string
+- <code>priority</code>: Optional, enum ('low', 'medium', 'high')
+- <code>categories</code>: Optional, array of strings, max 10 items, each max 50 characters</p>
+<p><strong>Response (201 Created):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+  &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;title&quot;: &quot;Buy milk&quot;,
+  &quot;description&quot;: &quot;2 liters, skim&quot;,
+  &quot;completed&quot;: false,
+  &quot;dueDate&quot;: &quot;2025-11-07T18:00:00Z&quot;,
+  &quot;priority&quot;: &quot;medium&quot;,
+  &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+  &quot;createdAt&quot;: &quot;2025-11-06T10:05:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format or validation error
+- <code>404 Not Found</code> - List not found
+- <code>415 Unsupported Media Type</code> - Invalid Content-Type
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="patch-apiv1tasksid">PATCH /api/v1/tasks/:id</h3>
+<p>Update an existing task.</p>
+<p><strong>Request:</strong>
+- Method: <code>PATCH</code>
+- Headers: <code>Content-Type: application/json</code>
+- URL Parameters: <code>id</code> (UUID v4)
+- Body (all fields optional):</p>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Buy organic milk&quot;,
+  &quot;completed&quot;: true,
+  &quot;priority&quot;: &quot;high&quot;
+}
+</code></pre>
+<p><strong>Validation Rules:</strong>
+- <code>title</code>: Optional, string, 1-255 characters if provided
+- <code>description</code>: Optional, string, max 2000 characters if provided
+- <code>completed</code>: Optional, boolean
+- <code>dueDate</code>: Optional, valid ISO 8601 datetime string or null
+- <code>priority</code>: Optional, enum ('low', 'medium', 'high') or null
+- <code>categories</code>: Optional, array of strings, max 10 items, each max 50 characters
+- At least one field must be provided</p>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+  &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;title&quot;: &quot;Buy organic milk&quot;,
+  &quot;description&quot;: &quot;2 liters, skim&quot;,
+  &quot;completed&quot;: true,
+  &quot;dueDate&quot;: &quot;2025-11-07T18:00:00Z&quot;,
+  &quot;priority&quot;: &quot;high&quot;,
+  &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+  &quot;createdAt&quot;: &quot;2025-11-06T10:05:00Z&quot;,
+  &quot;updatedAt&quot;: &quot;2025-11-06T11:30:00Z&quot;
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format or validation error
+- <code>404 Not Found</code> - Task not found
+- <code>415 Unsupported Media Type</code> - Invalid Content-Type
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h3 id="delete-apiv1tasksid">DELETE /api/v1/tasks/:id</h3>
+<p>Delete a task.</p>
+<p><strong>Request:</strong>
+- Method: <code>DELETE</code>
+- Headers: None required
+- URL Parameters: <code>id</code> (UUID v4)</p>
+<p><strong>Response (204 No Content):</strong>
+- Empty body</p>
+<p><strong>Error Responses:</strong>
+- <code>400 Bad Request</code> - Invalid UUID format
+- <code>404 Not Found</code> - Task not found
+- <code>500 Internal Server Error</code> - Database error</p>
+<hr />
+<h2 id="error-responses">Error Responses</h2>
+<p>All errors return JSON with the following format:</p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;Error message&quot;,
+  &quot;code&quot;: &quot;ERROR_CODE&quot;,
+  &quot;details&quot;: {}
+}
+</code></pre>
+<h3 id="http-status-codes">HTTP Status Codes</h3>
+<ul>
+<li><code>200 OK</code> - Successful GET/PATCH request</li>
+<li><code>201 Created</code> - Successful POST request</li>
+<li><code>204 No Content</code> - Successful DELETE request</li>
+<li><code>400 Bad Request</code> - Invalid request (validation error, malformed UUID, etc.)</li>
+<li><code>401 Unauthorized</code> - Missing, invalid, expired, or blacklisted token</li>
+<li><code>404 Not Found</code> - Resource not found</li>
+<li><code>409 Conflict</code> - Duplicate username or email</li>
+<li><code>415 Unsupported Media Type</code> - Invalid Content-Type</li>
+<li><code>500 Internal Server Error</code> - Server/database error</li>
+</ul>
+<h3 id="error-codes">Error Codes</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VALIDATION_ERROR</code></td>
+<td>Input validation failed</td>
+</tr>
+<tr>
+<td><code>INVALID_UUID</code></td>
+<td>Invalid UUID format</td>
+</tr>
+<tr>
+<td><code>INVALID_JSON</code></td>
+<td>Malformed JSON</td>
+</tr>
+<tr>
+<td><code>NOT_FOUND</code></td>
+<td>Resource not found</td>
+</tr>
+<tr>
+<td><code>CONFLICT</code></td>
+<td>Duplicate resource</td>
+</tr>
+<tr>
+<td><code>UNAUTHORIZED</code></td>
+<td>Missing or invalid authentication</td>
+</tr>
+<tr>
+<td><code>UNSUPPORTED_MEDIA_TYPE</code></td>
+<td>Wrong Content-Type header</td>
+</tr>
+<tr>
+<td><code>INTERNAL_ERROR</code></td>
+<td>Server error</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="security-guidelines">Security Guidelines</h2>
+<h3 id="authentication-security">Authentication Security</h3>
+<ol>
+<li><strong>Password Hashing:</strong></li>
+<li>Bcrypt with cost factor 12</li>
+<li>Passwords never stored or returned in plain text</li>
+<li>
+<p>Example: <code>password_hash($password, PASSWORD_BCRYPT, ['cost' =&gt; 12])</code></p>
+</li>
+<li>
+<p><strong>JWT Token Management:</strong></p>
+</li>
+<li>Tokens expire after 1 hour</li>
+<li>Signature verification with secret key</li>
+<li>Token blacklisting on logout</li>
+<li>
+<p>Invalid/expired/blacklisted tokens return <code>401 Unauthorized</code></p>
+</li>
+<li>
+<p><strong>Token Blacklisting:</strong></p>
+</li>
+<li>Tokens added to blacklist on logout</li>
+<li>Blacklist checked before token validation</li>
+<li>Automatic cleanup of expired tokens</li>
+<li>Prevents token reuse after logout</li>
+</ol>
+<h3 id="input-validation">Input Validation</h3>
+<ol>
+<li><strong>UUID Validation:</strong></li>
+<li>All IDs must be valid UUID v4 format</li>
+<li>
+<p>Reject malformed UUIDs with <code>400 Bad Request</code></p>
+</li>
+<li>
+<p><strong>String Sanitization:</strong></p>
+</li>
+<li>Trim whitespace from all string inputs</li>
+<li>Reject strings that are only whitespace when required</li>
+<li>Enforce maximum length limits</li>
+<li>
+<p>Escape HTML entities to prevent XSS attacks</p>
+</li>
+<li>
+<p><strong>Data Type Validation:</strong></p>
+</li>
+<li>Validate JSON structure and data types</li>
+<li>Reject invalid JSON with <code>400 Bad Request</code></li>
+<li>
+<p>Validate enums (e.g., priority values)</p>
+</li>
+<li>
+<p><strong>Date Validation:</strong></p>
+</li>
+<li>Validate ISO 8601 format for dates</li>
+<li>Reject invalid date formats with <code>400 Bad Request</code></li>
+</ol>
+<h3 id="database-security">Database Security</h3>
+<ol>
+<li><strong>SQL Injection Prevention:</strong></li>
+<li>Use prepared statements (PDO with parameterized queries) for ALL database operations</li>
+<li>NEVER concatenate user input into SQL queries</li>
+<li>
+<p>Validate and sanitize all input before database operations</p>
+</li>
+<li>
+<p><strong>Transaction Safety:</strong></p>
+</li>
+<li>Use transactions for operations affecting multiple tables</li>
+<li>Implement proper rollback on errors</li>
+</ol>
+<h3 id="content-type-validation">Content-Type Validation</h3>
+<ol>
+<li><strong>Request Validation:</strong></li>
+<li>Validate <code>Content-Type: application/json</code> for POST/PATCH requests</li>
+<li>
+<p>Return <code>415 Unsupported Media Type</code> for invalid content types</p>
+</li>
+<li>
+<p><strong>Response Headers:</strong></p>
+</li>
+<li>Always return <code>Content-Type: application/json</code></li>
+<li>Include proper HTTP status codes</li>
+</ol>
+<h3 id="environment-configuration">Environment Configuration</h3>
+<p>Set in <code>.env</code> file:</p>
+<pre><code class="language-bash"># Debug mode (show detailed errors)
+DEBUG_MODE=true
+
+# Log level (error, warning, info, debug)
+LOG_LEVEL=debug
+
+# Database path
+DATABASE_PATH=data/todo.db
+
+# JWT configuration (CHANGE IN PRODUCTION!)
+JWT_SECRET=your-secret-key-change-in-production
+JWT_EXPIRY=3600
+</code></pre>
+<p><strong>Production Recommendations:</strong>
+- Set <code>DEBUG_MODE=false</code> in production
+- Use a strong, random <code>JWT_SECRET</code> (32+ characters)
+- Keep <code>JWT_SECRET</code> secure (never commit to git)
+- Consider shorter expiry for sensitive applications
+- Use HTTPS for all endpoints
+- Implement rate limiting to prevent abuse</p>
+<hr />
+<h2 id="complete-authentication-flow-example">Complete Authentication Flow Example</h2>
+<pre><code class="language-bash"># 1. Sign up
+SIGNUP=$(curl -s -X POST http://localhost:8000/api/v1/auth/signup \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;username&quot;:&quot;alice&quot;,&quot;email&quot;:&quot;alice@test.com&quot;,&quot;password&quot;:&quot;pass123456&quot;}')
+
+TOKEN=$(echo $SIGNUP | grep -o '&quot;token&quot;:&quot;[^&quot;]*&quot;' | cut -d'&quot;' -f4)
+echo &quot;Token: $TOKEN&quot;
+
+# 2. Get profile (requires token)
+curl -X GET http://localhost:8000/api/v1/users/profile \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+
+# 3. Logout (blacklist token)
+curl -X POST http://localhost:8000/api/v1/auth/logout \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+
+# 4. Try to use token again (should fail with 401)
+curl -X GET http://localhost:8000/api/v1/users/profile \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+
+# 5. Login to get new token
+LOGIN=$(curl -s -X POST http://localhost:8000/api/v1/auth/login \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;username&quot;:&quot;alice&quot;,&quot;password&quot;:&quot;pass123456&quot;}')
+
+NEW_TOKEN=$(echo $LOGIN | grep -o '&quot;token&quot;:&quot;[^&quot;]*&quot;' | cut -d'&quot;' -f4)
+echo &quot;New token: $NEW_TOKEN&quot;
+</code></pre>
+<hr />
+<h2 id="endpoint-summary">Endpoint Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Protected</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Authentication</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/auth/signup</code></td>
+<td>No</td>
+<td>Create account</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/auth/login</code></td>
+<td>No</td>
+<td>Authenticate user</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/auth/logout</code></td>
+<td>Yes</td>
+<td>Logout and blacklist token</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/users/profile</code></td>
+<td>Yes</td>
+<td>Get current user profile</td>
+</tr>
+<tr>
+<td><strong>Lists</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/lists</code></td>
+<td>No</td>
+<td>Get all lists</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/lists</code></td>
+<td>No</td>
+<td>Create list</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/lists/:id</code></td>
+<td>No</td>
+<td>Get list by ID</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/lists/:id</code></td>
+<td>No</td>
+<td>Update list</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/lists/:id</code></td>
+<td>No</td>
+<td>Delete list</td>
+</tr>
+<tr>
+<td><strong>Tasks</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/lists/:listId/tasks</code></td>
+<td>No</td>
+<td>Get tasks in list</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/lists/:listId/tasks</code></td>
+<td>No</td>
+<td>Create task</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/tasks/:id</code></td>
+<td>No</td>
+<td>Get task by ID</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/tasks/:id</code></td>
+<td>No</td>
+<td>Update task</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/tasks/:id</code></td>
+<td>No</td>
+<td>Delete task</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Protected endpoints require:</strong> <code>Authorization: Bearer &lt;token&gt;</code> header</p>
+<hr />
+<h2 id="token-blacklisting">Token Blacklisting</h2>
+<h3 id="overview_1">Overview</h3>
+<p>The API implements <strong>token blacklisting</strong> to properly handle logout. When a user logs out, their JWT token is added to a blacklist database, preventing it from being used even if it hasn't expired yet.</p>
+<h3 id="why-jwt_secret-is-needed">Why JWT_SECRET is Needed</h3>
+<p><strong>Question:</strong> Why do we need <code>JWT_SECRET</code> in <code>.env</code> if signup/login give tokens?</p>
+<p><strong>Answer:</strong>
+- <code>JWT_SECRET</code> is the <strong>master key</strong> used by the server to sign and verify ALL tokens
+- User tokens are <strong>signed using this secret</strong> and given to users
+- When users send their token, the server uses <code>JWT_SECRET</code> to verify it's authentic</p>
+<p><strong>Analogy:</strong>
+- <code>JWT_SECRET</code> = The stamp used by a notary to certify documents
+- User tokens = Certified documents given to citizens
+- The notary (server) uses the stamp to verify documents are real</p>
+<h3 id="how-blacklisting-works">How Blacklisting Works</h3>
+<p><strong>Without Blacklist:</strong>
+1. User logs in → Gets token (valid for 1 hour)
+2. User logs out → Client removes token
+3. <strong>Problem:</strong> If someone copied the token, they can still use it for up to 1 hour!</p>
+<p><strong>With Blacklist:</strong>
+1. User logs in → Gets token (valid for 1 hour)
+2. User logs out → Token added to blacklist database
+3. <strong>Solution:</strong> Even if someone has the token, server rejects it because it's blacklisted!</p>
+<h3 id="implementation">Implementation</h3>
+<p><strong>Database Table:</strong></p>
+<pre><code class="language-sql">CREATE TABLE token_blacklist (
+    token TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    blacklisted_at TEXT NOT NULL,
+    expires_at TEXT NOT NULL
+);
+</code></pre>
+<p><strong>Token Validation Flow:</strong></p>
+<ol>
+<li>Extract token from <code>Authorization: Bearer &lt;token&gt;</code> header</li>
+<li>Check if token is in blacklist → Reject if blacklisted</li>
+<li>Verify JWT signature with <code>JWT_SECRET</code></li>
+<li>Check token expiration → Reject if expired</li>
+<li>Allow request if all checks pass</li>
+</ol>
+<p><strong>Automatic Cleanup:</strong></p>
+<ul>
+<li>Expired tokens are automatically removed from blacklist on every logout</li>
+<li>Keeps database size manageable</li>
+<li>No manual cleanup needed</li>
+</ul>
+<h3 id="testing-token-blacklisting">Testing Token Blacklisting</h3>
+<p><strong>Test Flow:</strong></p>
+<pre><code class="language-bash"># 1. Sign up and get token
+RESPONSE=$(curl -s -X POST http://localhost:8000/api/v1/auth/signup \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;username&quot;:&quot;test&quot;,&quot;email&quot;:&quot;test@test.com&quot;,&quot;password&quot;:&quot;pass1234&quot;}')
+
+TOKEN=$(echo $RESPONSE | grep -o '&quot;token&quot;:&quot;[^&quot;]*&quot;' | cut -d'&quot;' -f4)
+echo &quot;Token: $TOKEN&quot;
+
+# 2. Verify token works
+curl -X GET http://localhost:8000/api/v1/users/profile \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+# Should return user profile
+
+# 3. Logout (blacklist the token)
+curl -X POST http://localhost:8000/api/v1/auth/logout \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+# Should return 204 No Content
+
+# 4. Try to use token again
+curl -X GET http://localhost:8000/api/v1/users/profile \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+# Should return 401 Unauthorized (token is blacklisted!)
+</code></pre>
+<h3 id="security-benefits">Security Benefits</h3>
+<p><strong>Before Blacklisting:</strong>
+- ❌ Stolen tokens work until expiry (up to 1 hour)
+- ❌ User can't invalidate their own token
+- ❌ No way to force logout across devices</p>
+<p><strong>After Blacklisting:</strong>
+- ✅ Logout immediately invalidates token
+- ✅ Stolen tokens can be blocked
+- ✅ Can implement "logout all devices" feature
+- ✅ Admin can blacklist compromised tokens</p>
+<h3 id="database-queries">Database Queries</h3>
+<p>View blacklisted tokens:</p>
+<pre><code class="language-bash">sqlite3 data/todo.db &quot;SELECT * FROM token_blacklist;&quot;
+</code></pre>
+<p>Count blacklisted tokens:</p>
+<pre><code class="language-bash">sqlite3 data/todo.db &quot;SELECT COUNT(*) FROM token_blacklist;&quot;
+</code></pre>
+<p>Manually cleanup expired tokens:</p>
+<pre><code class="language-bash">sqlite3 data/todo.db &quot;DELETE FROM token_blacklist WHERE expires_at &lt; datetime('now');&quot;
+</code></pre>
+<h3 id="performance-impact">Performance Impact</h3>
+<ul>
+<li>Every protected endpoint checks blacklist (adds ~1-5ms)</li>
+<li>Indexed database lookup is very fast</li>
+<li>Negligible impact for small to medium applications</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>Q: What happens if blacklist check fails (database error)?</strong></p>
+<p>A: The token validation continues with normal JWT validation. This prevents a database outage from breaking authentication entirely.</p>
+<p><strong>Q: How long are tokens kept in the blacklist?</strong></p>
+<p>A: Until they expire. Once a token's expiry time passes, it's automatically removed during cleanup.</p>
+<p><strong>Q: Can I manually clear the blacklist?</strong></p>
+<p>A: Yes, you can delete the <code>token_blacklist</code> table or specific entries via SQL.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

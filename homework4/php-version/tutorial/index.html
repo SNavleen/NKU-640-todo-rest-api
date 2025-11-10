@@ -1,0 +1,1578 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../API/">
+      
+      
+        <link rel="next" href="../../../homework5/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Tutorial Slides - NKU 640</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#todo-rest-api-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NKU 640" class="md-header__button md-logo" aria-label="NKU 640" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NKU 640
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial Slides
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NKU 640" class="md-nav__button md-logo" aria-label="NKU 640" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NKU 640
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TODO-API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TODO-API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HW4_plan_stage1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PHP Implementation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            PHP Implementation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Slides
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Slides
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quality Software
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Quality Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homework5/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Final Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- _class: lead -->
+
+<h1 id="todo-rest-api-tutorial">TODO REST API Tutorial</h1>
+<p><strong>PHP Implementation with SQLite</strong></p>
+<p>A Comprehensive Guide to Building Secure RESTful APIs</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><strong>Overview &amp; Architecture</strong></li>
+<li><strong>Authentication Flow</strong></li>
+<li><strong>API Endpoints Overview</strong></li>
+<li><strong>Detailed API Examples</strong></li>
+<li><strong>Security Features</strong></li>
+<li><strong>Testing &amp; Deployment</strong></li>
+</ol>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="1-overview-architecture">1. Overview &amp; Architecture</h1>
+<p>Understanding the TODO REST API System</p>
+<hr />
+<h2 id="project-overview">Project Overview</h2>
+<p><strong>What is this API?</strong>
+- A secure REST API for managing TODO lists and tasks
+- Built with PHP 8.1+ and SQLite database
+- JWT-based authentication with token blacklisting
+- 14+ endpoints covering authentication, lists, and tasks</p>
+<p><strong>Key Features:</strong>
+- ✅ User authentication (signup, login, logout)
+- ✅ CRUD operations for lists and tasks
+- ✅ Bearer token authentication
+- ✅ SQL injection prevention
+- ✅ XSS protection
+- ✅ Comprehensive unit tests (39 tests)</p>
+<hr />
+<h2 id="architecture">Architecture</h2>
+<pre><code>┌─────────────┐      HTTP/JSON      ┌──────────────┐
+│   Client    │ ──────────────────&gt; │  PHP Server  │
+│ (Browser/   │                     │  (Router +   │
+│  curl/etc)  │ &lt;────────────────── │  Controllers)│
+└─────────────┘                     └──────┬───────┘
+                                           │
+                                           ▼
+                                    ┌──────────────┐
+                                    │   SQLite DB  │
+                                    │   (todo.db)  │
+                                    └──────────────┘
+</code></pre>
+<p><strong>Database Tables:</strong>
+- <code>users</code> - User accounts (username, email, password hash)
+- <code>lists</code> - TODO lists (name, description)
+- <code>tasks</code> - Individual tasks (title, description, completed, etc.)
+- <code>token_blacklist</code> - Invalidated JWT tokens</p>
+<hr />
+<h2 id="tech-stack">Tech Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Language</strong></td>
+<td>PHP 8.1+</td>
+<td>Server-side logic</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>SQLite</td>
+<td>Data persistence</td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>JWT</td>
+<td>Stateless auth tokens</td>
+</tr>
+<tr>
+<td><strong>Password</strong></td>
+<td>bcrypt (cost 12)</td>
+<td>Secure password hashing</td>
+</tr>
+<tr>
+<td><strong>Web Server</strong></td>
+<td>PHP Built-in / NGINX</td>
+<td>HTTP handling</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>PHPUnit</td>
+<td>Unit testing</td>
+</tr>
+<tr>
+<td><strong>API Testing</strong></td>
+<td>Bruno / curl</td>
+<td>Manual testing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="2-authentication-flow">2. Authentication Flow</h1>
+<p>JWT-based Authentication with Token Blacklisting</p>
+<hr />
+<h2 id="authentication-overview">Authentication Overview</h2>
+<p><strong>What is JWT?</strong>
+- <strong>J</strong>SON <strong>W</strong>eb <strong>T</strong>oken - industry standard for secure tokens
+- Contains user info + expiration + signature
+- Stateless (no server-side sessions needed)
+- Sent as <code>Authorization: Bearer &lt;token&gt;</code> header</p>
+<p><strong>Our Implementation:</strong>
+- Tokens expire after <strong>1 hour</strong> (configurable)
+- Passwords hashed with <strong>bcrypt</strong> (cost factor 12)
+- Tokens <strong>blacklisted on logout</strong> for security
+- Protected endpoints require valid, non-blacklisted token</p>
+<hr />
+<h2 id="authentication-endpoints">Authentication Endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Protected</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/v1/auth/signup</code></td>
+<td>POST</td>
+<td>No</td>
+<td>Create new account</td>
+</tr>
+<tr>
+<td><code>/api/v1/auth/login</code></td>
+<td>POST</td>
+<td>No</td>
+<td>Login and get token</td>
+</tr>
+<tr>
+<td><code>/api/v1/auth/logout</code></td>
+<td>POST</td>
+<td><strong>Yes</strong></td>
+<td>Logout and blacklist token</td>
+</tr>
+<tr>
+<td><code>/api/v1/users/profile</code></td>
+<td>GET</td>
+<td><strong>Yes</strong></td>
+<td>Get current user info</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Protected = Requires <code>Authorization: Bearer &lt;token&gt;</code> header</strong></p>
+<hr />
+<h2 id="signup-example">Signup Example</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/auth/signup \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;email&quot;: &quot;alice@example.com&quot;,
+    &quot;password&quot;: &quot;password123&quot;
+  }'
+</code></pre>
+<p><strong>Response (201 Created):</strong></p>
+<pre><code class="language-json">{
+  &quot;token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;email&quot;: &quot;alice@example.com&quot;,
+    &quot;createdAt&quot;: &quot;2025-11-07T10:00:00Z&quot;
+  }
+}
+</code></pre>
+<hr />
+<h2 id="signup-validation-rules">Signup - Validation Rules</h2>
+<p><strong>Username:</strong>
+- Required, 3-50 characters
+- Must be unique
+- Trimmed of whitespace</p>
+<p><strong>Email:</strong>
+- Required, valid email format
+- Must be unique
+- Trimmed of whitespace</p>
+<p><strong>Password:</strong>
+- Required, minimum 8 characters
+- Hashed with bcrypt before storage
+- <strong>Never</strong> stored or returned in plain text</p>
+<p><strong>Error Responses:</strong>
+- <code>400</code> - Validation error (missing/invalid fields)
+- <code>409</code> - Username or email already exists
+- <code>500</code> - Server error</p>
+<hr />
+<h2 id="login-example">Login Example</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/auth/login \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;password&quot;: &quot;password123&quot;
+  }'
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+    &quot;username&quot;: &quot;alice&quot;,
+    &quot;email&quot;: &quot;alice@example.com&quot;,
+    &quot;createdAt&quot;: &quot;2025-11-07T10:00:00Z&quot;
+  }
+}
+</code></pre>
+<p><strong>Save this token!</strong> You'll need it for protected endpoints.</p>
+<hr />
+<h2 id="get-user-profile-example">Get User Profile Example</h2>
+<p><strong>Request (with Bearer token):</strong></p>
+<pre><code class="language-bash">TOKEN=&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...&quot;
+
+curl -X GET http://localhost:8000/api/v1/users/profile \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+  &quot;username&quot;: &quot;alice&quot;,
+  &quot;email&quot;: &quot;alice@example.com&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-07T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>401</code> - Missing, invalid, expired, or blacklisted token
+- <code>404</code> - User not found</p>
+<hr />
+<h2 id="logout-example">Logout Example</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">TOKEN=&quot;your-jwt-token-here&quot;
+
+curl -X POST http://localhost:8000/api/v1/auth/logout \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+</code></pre>
+<p><strong>Response (204 No Content):</strong>
+- Empty body
+- Token is now <strong>blacklisted</strong> and cannot be reused</p>
+<p><strong>What happens:</strong>
+1. Token is added to <code>token_blacklist</code> database
+2. Future requests with this token will get <code>401 Unauthorized</code>
+3. User must login again to get a new token</p>
+<hr />
+<h2 id="token-blacklisting-why">Token Blacklisting - Why?</h2>
+<p><strong>Problem Without Blacklisting:</strong></p>
+<pre><code>User logs in  ──&gt; Gets token (valid 1 hour)
+User logs out ──&gt; Client deletes token
+❌ Problem: If attacker copied the token,
+            they can still use it!
+</code></pre>
+<p><strong>Solution With Blacklisting:</strong></p>
+<pre><code>User logs in  ──&gt; Gets token (valid 1 hour)
+User logs out ──&gt; Token added to blacklist DB
+✅ Solution: Even if attacker has token,
+            server rejects it (blacklisted!)
+</code></pre>
+<p><strong>Security Benefits:</strong>
+- ✅ Logout immediately invalidates token
+- ✅ Stolen tokens can be blocked
+- ✅ Can implement "logout all devices"</p>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="3-api-endpoints-overview">3. API Endpoints Overview</h1>
+<p>All 14 Endpoints at a Glance</p>
+<hr />
+<h2 id="complete-endpoint-list">Complete Endpoint List</h2>
+<p><strong>Authentication (4 endpoints):</strong>
+- POST <code>/api/v1/auth/signup</code> - Create account
+- POST <code>/api/v1/auth/login</code> - Login
+- POST <code>/api/v1/auth/logout</code> ⚠️ - Logout (protected)
+- GET <code>/api/v1/users/profile</code> ⚠️ - Get profile (protected)</p>
+<p><strong>Lists (5 endpoints):</strong>
+- GET <code>/api/v1/lists</code> - Get all lists
+- POST <code>/api/v1/lists</code> - Create list
+- GET <code>/api/v1/lists/:id</code> - Get single list
+- PATCH <code>/api/v1/lists/:id</code> - Update list
+- DELETE <code>/api/v1/lists/:id</code> - Delete list</p>
+<hr />
+<h2 id="complete-endpoint-list-cont">Complete Endpoint List (cont.)</h2>
+<p><strong>Tasks (5 endpoints):</strong>
+- GET <code>/api/v1/lists/:listId/tasks</code> - Get tasks in list
+- POST <code>/api/v1/lists/:listId/tasks</code> - Create task
+- GET <code>/api/v1/tasks/:id</code> - Get single task
+- PATCH <code>/api/v1/tasks/:id</code> - Update task
+- DELETE <code>/api/v1/tasks/:id</code> - Delete task</p>
+<p><strong>Health Check (1 endpoint):</strong>
+- GET <code>/api/v1/health</code> - Check API health</p>
+<p>⚠️ = <strong>Protected</strong> (requires Bearer token)</p>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="4-detailed-api-examples">4. Detailed API Examples</h1>
+<p>Lists &amp; Tasks CRUD Operations</p>
+<hr />
+<h2 id="health-check">Health Check</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X GET http://localhost:8000/api/v1/health
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;healthy&quot;,
+  &quot;timestamp&quot;: &quot;2025-11-07T23:48:15+00:00&quot;,
+  &quot;service&quot;: &quot;PHP TODO REST API&quot;,
+  &quot;version&quot;: &quot;v1&quot;,
+  &quot;checks&quot;: {
+    &quot;database&quot;: {&quot;status&quot;: &quot;healthy&quot;, &quot;message&quot;: &quot;Database connection successful&quot;},
+    &quot;php&quot;: {&quot;status&quot;: &quot;healthy&quot;, &quot;version&quot;: &quot;8.1.33&quot;},
+    &quot;disk&quot;: {&quot;status&quot;: &quot;healthy&quot;, &quot;free_space_mb&quot;: 5629.3},
+    &quot;memory&quot;: {&quot;status&quot;: &quot;healthy&quot;, &quot;memory_limit&quot;: &quot;128M&quot;}
+  }
+}
+</code></pre>
+<p><strong>Use case:</strong> Monitor API health and dependencies</p>
+<hr />
+<h2 id="get-all-lists">Get All Lists</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X GET http://localhost:8000/api/v1/lists
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;name&quot;: &quot;Groceries&quot;,
+    &quot;description&quot;: &quot;Weekly shopping list&quot;,
+    &quot;createdAt&quot;: &quot;2025-11-07T10:00:00Z&quot;,
+    &quot;updatedAt&quot;: null
+  },
+  {
+    &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+    &quot;name&quot;: &quot;Work Tasks&quot;,
+    &quot;description&quot;: &quot;Q4 project deliverables&quot;,
+    &quot;createdAt&quot;: &quot;2025-11-07T11:00:00Z&quot;,
+    &quot;updatedAt&quot;: null
+  }
+]
+</code></pre>
+<hr />
+<h2 id="create-list">Create List</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/lists \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;name&quot;: &quot;Groceries&quot;,
+    &quot;description&quot;: &quot;Weekly shopping list&quot;
+  }'
+</code></pre>
+<p><strong>Response (201 Created):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;name&quot;: &quot;Groceries&quot;,
+  &quot;description&quot;: &quot;Weekly shopping list&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-07T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Validation:</strong>
+- <code>name</code>: Required, 1-255 chars, cannot be whitespace-only
+- <code>description</code>: Optional, max 1000 chars</p>
+<hr />
+<h2 id="get-single-list">Get Single List</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X GET http://localhost:8000/api/v1/lists/550e8400-e29b-41d4-a716-446655440000
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;name&quot;: &quot;Groceries&quot;,
+  &quot;description&quot;: &quot;Weekly shopping list&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-07T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400</code> - Invalid UUID format
+- <code>404</code> - List not found</p>
+<hr />
+<h2 id="update-list">Update List</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X PATCH http://localhost:8000/api/v1/lists/550e8400-e29b-41d4-a716-446655440000 \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;name&quot;: &quot;Updated Groceries&quot;,
+    &quot;description&quot;: &quot;Monthly shopping list&quot;
+  }'
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;name&quot;: &quot;Updated Groceries&quot;,
+  &quot;description&quot;: &quot;Monthly shopping list&quot;,
+  &quot;createdAt&quot;: &quot;2025-11-07T10:00:00Z&quot;,
+  &quot;updatedAt&quot;: &quot;2025-11-07T11:30:00Z&quot;
+}
+</code></pre>
+<p><strong>Note:</strong> All fields are optional, but at least one must be provided.</p>
+<hr />
+<h2 id="delete-list">Delete List</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X DELETE http://localhost:8000/api/v1/lists/550e8400-e29b-41d4-a716-446655440000
+</code></pre>
+<p><strong>Response (204 No Content):</strong>
+- Empty body
+- List and <strong>all associated tasks</strong> are deleted</p>
+<p><strong>Error Responses:</strong>
+- <code>400</code> - Invalid UUID format
+- <code>404</code> - List not found</p>
+<p><strong>⚠️ Warning:</strong> This operation is permanent and cascades to tasks!</p>
+<hr />
+<h2 id="get-tasks-in-list">Get Tasks in List</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X GET http://localhost:8000/api/v1/lists/550e8400-e29b-41d4-a716-446655440000/tasks
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+    &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;title&quot;: &quot;Buy milk&quot;,
+    &quot;description&quot;: &quot;2 liters, skim&quot;,
+    &quot;completed&quot;: false,
+    &quot;dueDate&quot;: &quot;2025-11-08T18:00:00Z&quot;,
+    &quot;priority&quot;: &quot;medium&quot;,
+    &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+    &quot;createdAt&quot;: &quot;2025-11-07T10:05:00Z&quot;,
+    &quot;updatedAt&quot;: null
+  }
+]
+</code></pre>
+<hr />
+<h2 id="create-task">Create Task</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/lists/550e8400-e29b-41d4-a716-446655440000/tasks \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;title&quot;: &quot;Buy milk&quot;,
+    &quot;description&quot;: &quot;2 liters, skim&quot;,
+    &quot;dueDate&quot;: &quot;2025-11-08T18:00:00Z&quot;,
+    &quot;priority&quot;: &quot;medium&quot;,
+    &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;]
+  }'
+</code></pre>
+<p><strong>Validation:</strong>
+- <code>title</code>: Required, 1-255 chars
+- <code>description</code>: Optional, max 2000 chars
+- <code>completed</code>: Optional, boolean (default: false)
+- <code>dueDate</code>: Optional, ISO 8601 datetime
+- <code>priority</code>: Optional, enum ('low', 'medium', 'high')
+- <code>categories</code>: Optional, array of strings (max 10, each max 50 chars)</p>
+<hr />
+<h2 id="create-task-response">Create Task Response</h2>
+<p><strong>Response (201 Created):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+  &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;title&quot;: &quot;Buy milk&quot;,
+  &quot;description&quot;: &quot;2 liters, skim&quot;,
+  &quot;completed&quot;: false,
+  &quot;dueDate&quot;: &quot;2025-11-08T18:00:00Z&quot;,
+  &quot;priority&quot;: &quot;medium&quot;,
+  &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+  &quot;createdAt&quot;: &quot;2025-11-07T10:05:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<p><strong>Error Responses:</strong>
+- <code>400</code> - Validation error or invalid UUID
+- <code>404</code> - List not found
+- <code>415</code> - Invalid Content-Type</p>
+<hr />
+<h2 id="get-single-task">Get Single Task</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X GET http://localhost:8000/api/v1/tasks/660e8400-e29b-41d4-a716-446655440001
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+  &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;title&quot;: &quot;Buy milk&quot;,
+  &quot;description&quot;: &quot;2 liters, skim&quot;,
+  &quot;completed&quot;: false,
+  &quot;dueDate&quot;: &quot;2025-11-08T18:00:00Z&quot;,
+  &quot;priority&quot;: &quot;medium&quot;,
+  &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+  &quot;createdAt&quot;: &quot;2025-11-07T10:05:00Z&quot;,
+  &quot;updatedAt&quot;: null
+}
+</code></pre>
+<hr />
+<h2 id="update-task">Update Task</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X PATCH http://localhost:8000/api/v1/tasks/660e8400-e29b-41d4-a716-446655440001 \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;title&quot;: &quot;Buy organic milk&quot;,
+    &quot;completed&quot;: true,
+    &quot;priority&quot;: &quot;high&quot;
+  }'
+</code></pre>
+<p><strong>Response (200 OK):</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,
+  &quot;listId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+  &quot;title&quot;: &quot;Buy organic milk&quot;,
+  &quot;description&quot;: &quot;2 liters, skim&quot;,
+  &quot;completed&quot;: true,
+  &quot;dueDate&quot;: &quot;2025-11-08T18:00:00Z&quot;,
+  &quot;priority&quot;: &quot;high&quot;,
+  &quot;categories&quot;: [&quot;groceries&quot;, &quot;dairy&quot;],
+  &quot;createdAt&quot;: &quot;2025-11-07T10:05:00Z&quot;,
+  &quot;updatedAt&quot;: &quot;2025-11-07T11:30:00Z&quot;
+}
+</code></pre>
+<hr />
+<h2 id="delete-task">Delete Task</h2>
+<p><strong>Request:</strong></p>
+<pre><code class="language-bash">curl -X DELETE http://localhost:8000/api/v1/tasks/660e8400-e29b-41d4-a716-446655440001
+</code></pre>
+<p><strong>Response (204 No Content):</strong>
+- Empty body
+- Task is permanently deleted</p>
+<p><strong>Error Responses:</strong>
+- <code>400</code> - Invalid UUID format
+- <code>404</code> - Task not found</p>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="5-security-features">5. Security Features</h1>
+<p>Built-in Protection Against Common Vulnerabilities</p>
+<hr />
+<h2 id="security-overview">Security Overview</h2>
+<p><strong>What We Protect Against:</strong></p>
+<ol>
+<li><strong>SQL Injection</strong> ⚠️ Most critical web vulnerability</li>
+<li><strong>XSS (Cross-Site Scripting)</strong> ⚠️ Code injection attacks</li>
+<li><strong>Password Leaks</strong> ⚠️ Credential theft</li>
+<li><strong>Token Theft</strong> ⚠️ Session hijacking</li>
+<li><strong>Invalid Input</strong> ⚠️ Data corruption</li>
+</ol>
+<p><strong>How We Protect:</strong>
+- Prepared statements (SQL injection)
+- HTML entity escaping (XSS)
+- Bcrypt hashing (passwords)
+- Token blacklisting (logout security)
+- Input validation (data integrity)</p>
+<hr />
+<h2 id="sql-injection-prevention">SQL Injection Prevention</h2>
+<p><strong>❌ Bad (Vulnerable to SQL Injection):</strong></p>
+<pre><code class="language-php">$query = &quot;SELECT * FROM users WHERE username = '$username'&quot;;
+// Attacker input: &quot;admin' OR '1'='1&quot;
+// Result: Bypasses authentication!
+</code></pre>
+<p><strong>✅ Good (Using Prepared Statements):</strong></p>
+<pre><code class="language-php">$stmt = $db-&gt;prepare(&quot;SELECT * FROM users WHERE username = :username&quot;);
+$stmt-&gt;execute([':username' =&gt; $username]);
+// User input is treated as data, not code
+// No SQL injection possible!
+</code></pre>
+<p><strong>All database operations use prepared statements with PDO.</strong></p>
+<hr />
+<h2 id="xss-protection">XSS Protection</h2>
+<p><strong>❌ Bad (Vulnerable to XSS):</strong></p>
+<pre><code class="language-php">echo &quot;&lt;h1&gt;&quot; . $_POST['name'] . &quot;&lt;/h1&gt;&quot;;
+// Attacker input: &quot;&lt;script&gt;alert('XSS')&lt;/script&gt;&quot;
+// Result: JavaScript executes!
+</code></pre>
+<p><strong>✅ Good (HTML Entity Escaping):</strong></p>
+<pre><code class="language-php">echo &quot;&lt;h1&gt;&quot; . htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8') . &quot;&lt;/h1&gt;&quot;;
+// Attacker input: &quot;&lt;script&gt;alert('XSS')&lt;/script&gt;&quot;
+// Result: Displayed as text, not executed
+</code></pre>
+<p><strong>All user input is escaped before output.</strong></p>
+<hr />
+<h2 id="password-security">Password Security</h2>
+<p><strong>Implementation:</strong></p>
+<pre><code class="language-php">// Hashing on signup
+$hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' =&gt; 12]);
+
+// Verification on login
+if (password_verify($inputPassword, $storedHash)) {
+    // Password correct
+}
+</code></pre>
+<p><strong>Features:</strong>
+- <strong>Bcrypt</strong> algorithm (industry standard)
+- <strong>Cost factor 12</strong> (2^12 = 4096 iterations)
+- <strong>Salt</strong> automatically generated and stored
+- <strong>One-way</strong> hash (cannot be reversed)
+- <strong>Slow</strong> by design (prevents brute force)</p>
+<p><strong>Passwords are NEVER:</strong>
+- Stored in plain text
+- Returned in API responses
+- Logged to files</p>
+<hr />
+<h2 id="token-security">Token Security</h2>
+<p><strong>Security Features:</strong>
+1. <strong>Signed</strong> with secret key (prevents tampering)
+2. <strong>Expiration</strong> after 1 hour (limits exposure)
+3. <strong>Blacklisting</strong> on logout (prevents reuse)
+4. <strong>Stateless</strong> (no server sessions to steal)</p>
+<p><strong>Token Validation:</strong></p>
+<pre><code class="language-php">1. Check blacklist → Reject if blacklisted
+2. Verify signature → Reject if tampered
+3. Check expiration → Reject if expired
+4. Allow request if all pass
+</code></pre>
+<hr />
+<h2 id="input-validation">Input Validation</h2>
+<p><strong>UUID Validation:</strong></p>
+<pre><code class="language-php">if (!preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i', $id)) {
+    return 400; // Bad Request
+}
+</code></pre>
+<p><strong>String Validation:</strong></p>
+<pre><code class="language-php">$name = trim($input['name']); // Remove whitespace
+if (empty($name)) {
+    return 400; // Cannot be empty
+}
+if (strlen($name) &gt; 255) {
+    return 400; // Too long
+}
+</code></pre>
+<p><strong>Enum Validation:</strong></p>
+<pre><code class="language-php">if (!in_array($priority, ['low', 'medium', 'high'])) {
+    return 400; // Invalid priority
+}
+</code></pre>
+<hr />
+<h2 id="error-response-format">Error Response Format</h2>
+<p><strong>All errors return consistent JSON:</strong></p>
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;Human-readable error message&quot;,
+  &quot;code&quot;: &quot;ERROR_CODE&quot;,
+  &quot;details&quot;: {
+    &quot;field&quot;: &quot;Additional context&quot;
+  }
+}
+</code></pre>
+<p><strong>HTTP Status Codes:</strong>
+- <code>200</code> - Success (GET/PATCH)
+- <code>201</code> - Created (POST)
+- <code>204</code> - No Content (DELETE)
+- <code>400</code> - Bad Request (validation error)
+- <code>401</code> - Unauthorized (auth error)
+- <code>404</code> - Not Found
+- <code>409</code> - Conflict (duplicate)
+- <code>415</code> - Unsupported Media Type
+- <code>500</code> - Internal Server Error</p>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="6-testing-deployment">6. Testing &amp; Deployment</h1>
+<p>How to Test and Deploy the API</p>
+<hr />
+<h2 id="local-setup">Local Setup</h2>
+<p><strong>Prerequisites:</strong>
+- PHP 8.1 or higher
+- Composer (PHP package manager)
+- SQLite3</p>
+<p><strong>Installation Steps:</strong></p>
+<pre><code class="language-bash"># 1. Clone repository
+git clone https://github.com/yourusername/NKU-640.git
+cd NKU-640/homework4/php-version
+
+# 2. Install dependencies
+composer install
+
+# 3. Copy environment file
+cp .env.example .env
+
+# 4. Start development server
+php -S localhost:8000 -t public
+</code></pre>
+<p><strong>Access at:</strong> http://localhost:8000</p>
+<hr />
+<h2 id="environment-configuration">Environment Configuration</h2>
+<p><strong>Edit <code>.env</code> file:</strong></p>
+<pre><code class="language-bash"># Debug mode (show detailed errors)
+DEBUG_MODE=true
+
+# Log level (error, warning, info, debug)
+LOG_LEVEL=debug
+
+# Database path
+DATABASE_PATH=data/todo.db
+
+# JWT configuration
+JWT_SECRET=your-secret-key-change-in-production
+JWT_EXPIRY=3600
+</code></pre>
+<p><strong>⚠️ Production Settings:</strong>
+- Set <code>DEBUG_MODE=false</code>
+- Use strong random <code>JWT_SECRET</code> (32+ characters)
+- Keep <code>JWT_SECRET</code> secure (never commit to git)
+- Use HTTPS for all endpoints</p>
+<hr />
+<h2 id="testing-with-curl">Testing with curl</h2>
+<p><strong>Complete workflow script:</strong></p>
+<pre><code class="language-bash">#!/bin/bash
+
+# 1. Sign up
+SIGNUP=$(curl -s -X POST http://localhost:8000/api/v1/auth/signup \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;username&quot;:&quot;alice&quot;,&quot;email&quot;:&quot;alice@test.com&quot;,&quot;password&quot;:&quot;pass123456&quot;}')
+
+TOKEN=$(echo $SIGNUP | grep -o '&quot;token&quot;:&quot;[^&quot;]*&quot;' | cut -d'&quot;' -f4)
+echo &quot;Token: $TOKEN&quot;
+
+# 2. Create list
+LIST=$(curl -s -X POST http://localhost:8000/api/v1/lists \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;name&quot;:&quot;Groceries&quot;,&quot;description&quot;:&quot;Weekly shopping&quot;}')
+
+LIST_ID=$(echo $LIST | grep -o '&quot;id&quot;:&quot;[^&quot;]*&quot;' | cut -d'&quot;' -f4)
+echo &quot;List ID: $LIST_ID&quot;
+</code></pre>
+<hr />
+<h2 id="testing-with-curl-cont">Testing with curl (cont.)</h2>
+<pre><code class="language-bash"># 3. Create task
+curl -X POST http://localhost:8000/api/v1/lists/$LIST_ID/tasks \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;title&quot;:&quot;Buy milk&quot;,
+    &quot;priority&quot;:&quot;medium&quot;,
+    &quot;categories&quot;:[&quot;groceries&quot;,&quot;dairy&quot;]
+  }'
+
+# 4. Get all tasks
+curl -X GET http://localhost:8000/api/v1/lists/$LIST_ID/tasks
+
+# 5. Get profile (requires token)
+curl -X GET http://localhost:8000/api/v1/users/profile \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+
+# 6. Logout
+curl -X POST http://localhost:8000/api/v1/auth/logout \
+  -H &quot;Authorization: Bearer $TOKEN&quot;
+</code></pre>
+<hr />
+<h2 id="unit-testing">Unit Testing</h2>
+<p><strong>Run tests with PHPUnit:</strong></p>
+<pre><code class="language-bash"># Run all tests
+./vendor/bin/phpunit
+
+# Run with coverage report
+./vendor/bin/phpunit --coverage-html coverage
+
+# Run specific test file
+./vendor/bin/phpunit tests/ListControllerTest.php
+</code></pre>
+<p><strong>Test Coverage:</strong>
+- 39 unit tests covering all endpoints
+- Authentication tests (signup, login, logout, profile)
+- List CRUD tests
+- Task CRUD tests
+- Validation tests
+- Error handling tests</p>
+<hr />
+<h2 id="nginx-deployment">NGINX Deployment</h2>
+<p><strong>NGINX Configuration:</strong></p>
+<pre><code class="language-nginx">server {
+    listen 80;
+    server_name yourdomain.com;
+    root /var/www/todo-api/public;
+    index index.php;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+</code></pre>
+<hr />
+<h2 id="nginx-deployment-steps">NGINX Deployment Steps</h2>
+<p><strong>1. Install PHP and NGINX:</strong></p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install nginx php8.1-fpm php8.1-sqlite3 php8.1-mbstring
+</code></pre>
+<p><strong>2. Deploy code:</strong></p>
+<pre><code class="language-bash">sudo mkdir -p /var/www/todo-api
+sudo cp -r * /var/www/todo-api/
+sudo chown -R www-data:www-data /var/www/todo-api
+</code></pre>
+<p><strong>3. Configure NGINX:</strong></p>
+<pre><code class="language-bash">sudo nano /etc/nginx/sites-available/todo-api
+sudo ln -s /etc/nginx/sites-available/todo-api /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+</code></pre>
+<hr />
+<h2 id="production-checklist">Production Checklist</h2>
+<p><strong>Before deploying to production:</strong></p>
+<p>✅ Set <code>DEBUG_MODE=false</code> in <code>.env</code>
+✅ Use strong random <code>JWT_SECRET</code>
+✅ Remove <code>.env</code> from git (use <code>.gitignore</code>)
+✅ Enable HTTPS (SSL/TLS certificate)
+✅ Set appropriate file permissions
+✅ Configure CORS if needed
+✅ Implement rate limiting
+✅ Set up logging and monitoring
+✅ Regular backups of database
+✅ Update dependencies regularly</p>
+<hr />
+<h2 id="monitoring-logging">Monitoring &amp; Logging</h2>
+<p><strong>Check logs:</strong></p>
+<pre><code class="language-bash"># Application logs
+tail -f logs/app.log
+
+# NGINX access logs
+tail -f /var/log/nginx/access.log
+
+# NGINX error logs
+tail -f /var/log/nginx/error.log
+
+# PHP-FPM logs
+tail -f /var/log/php8.1-fpm.log
+</code></pre>
+<p><strong>Health check endpoint:</strong></p>
+<pre><code class="language-bash">curl http://localhost:8000/api/v1/health
+</code></pre>
+<p>Monitor: database, disk space, memory, PHP version</p>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="summary-best-practices">Summary &amp; Best Practices</h1>
+<p>Key Takeaways</p>
+<hr />
+<h2 id="what-we-learned">What We Learned</h2>
+<p><strong>API Design:</strong>
+- ✅ RESTful principles (proper HTTP methods, status codes)
+- ✅ Consistent endpoint structure
+- ✅ Clear request/response formats
+- ✅ Comprehensive error handling</p>
+<p><strong>Security:</strong>
+- ✅ JWT authentication with blacklisting
+- ✅ Bcrypt password hashing
+- ✅ SQL injection prevention (prepared statements)
+- ✅ XSS protection (HTML escaping)
+- ✅ Input validation and sanitization</p>
+<p><strong>Development:</strong>
+- ✅ Unit testing (39 tests)
+- ✅ Environment configuration
+- ✅ Logging and debugging</p>
+<hr />
+<h2 id="best-practices">Best Practices</h2>
+<p><strong>Do:</strong>
+- ✅ Use prepared statements for all database queries
+- ✅ Hash passwords with bcrypt
+- ✅ Validate and sanitize all user input
+- ✅ Return appropriate HTTP status codes
+- ✅ Implement token expiration and blacklisting
+- ✅ Write unit tests
+- ✅ Use environment variables for secrets
+- ✅ Log errors for debugging</p>
+<p><strong>Don't:</strong>
+- ❌ Concatenate user input into SQL queries
+- ❌ Store passwords in plain text
+- ❌ Trust client input without validation
+- ❌ Expose sensitive data in error messages
+- ❌ Commit secrets to git
+- ❌ Use debug mode in production</p>
+<hr />
+<h2 id="resources">Resources</h2>
+<p><strong>Documentation:</strong>
+- <a href="../API/">API Reference</a> - Complete endpoint specification
+- <a href="../">README</a> - Setup and quick start guide
+- <a href="IMPLEMENTATION_SUMMARY.md">Implementation Summary</a> - Technical details</p>
+<p><strong>Code Repository:</strong>
+- GitHub: https://github.com/yourusername/NKU-640/tree/main/homework4/php-version</p>
+<p><strong>Technologies:</strong>
+- <a href="https://www.php.net/docs.php">PHP Documentation</a>
+- <a href="https://jwt.io/">JWT.io</a> - JWT debugger
+- <a href="https://phpunit.de/">PHPUnit</a> - Testing framework
+- <a href="https://getcomposer.org/">Composer</a> - Dependency manager</p>
+<hr />
+<!-- _class: lead -->
+
+<h1 id="questions">Questions?</h1>
+<p><strong>Thank you for following this tutorial!</strong></p>
+<p>For questions or issues:
+- Check the <a href="../API/">API Reference</a>
+- Review the <a href="../">README</a>
+- Examine test files in <code>tests/</code> directory
+- Consult the course materials</p>
+<p><strong>Happy coding! 🚀</strong></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
